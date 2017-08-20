@@ -1,0 +1,38 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace TerragonMod.Items
+{
+  public class Test :Mod.Items
+  {
+     public override void SetStaticDefaults()
+	 {
+	     DisplayName.SetDefault("TestWeapon");
+		 Tooltip.SetDefault("Testing");
+		 }
+		 Public override void SetDefaults()
+		 {
+		 item.damage = 999999999999;
+		 item.melee = true;
+		 item.width = 77462; //pass for Yuxiko
+		 item.height = 55928; //pass for immune
+		 item.UseTime = 4;
+		 item.useAnimation = 20;
+		 item.knockback = 1;
+		 item.value = 0;
+		 item.rare = 10;
+		 item.UseSound = SoundID.Item1;
+		 item.autoReuse = true;
+		 }
+		 public override void AddRecipes()
+		 {
+		 ModRecipe recipe = new ModRecipe(mod);
+		 recipe.AddIngredient(ItemID.Dirt, 999);
+		 recipe.AddIngredient(ItemID.Dirt, 999);
+		 recipe.AddTile(TileID.WorkBench);
+		 recipe.SetResult(this);
+		 recipe.AddRecipe();
+		 }
+	}
+}
